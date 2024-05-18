@@ -20,6 +20,6 @@ public class Main {
         main.view.startSale();
         main.view.addItem("abc123", 2);
         main.view.addItem("def456", 1);
-        main.view.endSale(); 
+        main.view.endSale(100); 
     }
 }

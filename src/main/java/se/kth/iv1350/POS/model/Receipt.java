@@ -32,12 +32,10 @@ public class Receipt {
      */
     @Override
     public String toString() {
-        //Builds the receipt text
         StringBuilder receiptText = new StringBuilder();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
         receiptText.append("Time of Sale: ").append(timeOfSale.format(formatter)).append("\n");
         receiptText.append("\nItems Purchased:\n");
-        //Iterates through the items in the sale and adds details to the receipt
         for (Item item : sale.getItems()) {
             receiptText.append(item.getItemName())
                        .append("\t\t\t").append(item.getQuantity())
