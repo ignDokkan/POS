@@ -4,10 +4,10 @@ package se.kth.iv1350.POS.model;
  * Represents an item that can be sold in the store.
  */
 public class Item {
-    private String itemID;
-    private String itemName;
-    private Price price;
-    private String itemDescription;
+    private final String itemID;
+    private final String itemName;
+    private final Price price;
+    private final String itemDescription;
     private int quantity;
 
     /**

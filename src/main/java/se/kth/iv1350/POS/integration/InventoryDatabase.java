@@ -3,9 +3,10 @@ package se.kth.iv1350.POS.integration;
 import java.util.ArrayList;
 import java.util.List;
 import se.kth.iv1350.POS.model.Item;
+import se.kth.iv1350.POS.exceptions.FailedDatabaseException;
 
 public class InventoryDatabase {
-    private List<Item> inventory;
+    private final List<Item> inventory;
 
     public InventoryDatabase() {
         this.inventory = new ArrayList<>();
@@ -21,8 +22,13 @@ public class InventoryDatabase {
     * 
     * @param itemID The ID of the item to be retrieved
     * @return The item with the matching ID if found; null otherwise
+    * @throws FailedDatabaseException If the itemID is "databaseErrorID"
     */
-    public Item getItemByID(String itemID) {
+    public Item getItemByID(String itemID) throws FailedDatabaseException {
+        if ("databaseErrorID".equals(itemID)) {
+            throw new FailedDatabaseException("Failed to connect to the database.");
+        }
+
         for (Item item : inventory) {
             if (item.getItemID().equals(itemID)) {
                 return item; 
@@ -30,4 +36,5 @@ public class InventoryDatabase {
         }
         return null; 
     }
+
 }

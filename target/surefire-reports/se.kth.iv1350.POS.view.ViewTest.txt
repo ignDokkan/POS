@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: se.kth.iv1350.POS.view.ViewTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.025 s <<< FAILURE! - in se.kth.iv1350.POS.view.ViewTest
+testEndSale  Time elapsed: 0.016 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: End sale output is incorrect. ==> expected: <true> but was: <false>
+	at se.kth.iv1350.POS.view.ViewTest.testEndSale(ViewTest.java:95)
+
+testAddItemWithDatabaseError  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Database error handling is incorrect. ==> expected: <true> but was: <false>
+	at se.kth.iv1350.POS.view.ViewTest.testAddItemWithDatabaseError(ViewTest.java:87)
+
+testAddItemWithInvalidID  Time elapsed: 0.001 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: Invalid item ID handling is incorrect. ==> expected: <true> but was: <false>
+	at se.kth.iv1350.POS.view.ViewTest.testAddItemWithInvalidID(ViewTest.java:72)
+
